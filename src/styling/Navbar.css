@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+.navbar-links a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-links a:hover {
+    color: #1e3a8a;
+}
+
+.navbar-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-up {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.log-in {
+    background-color: black;
+    color: white;
+}
