@@ -1,76 +1,145 @@
-import { useState } from "react"
-import "../styling/Signup.css"
+import React, { useState } from 'react';
+import '../styling/Signup.css';
+import { Mail, User, Lock, Eye, EyeOff } from 'lucide-react';
 
 function Signup() {
-  const [email, setEmail] = useState("")
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle email signup logic here
-    console.log("Signing up with email:", email)
-  }
-
-  const handleGoogleSignup = () => {
-    // Handle Google signup logic here
-    console.log("Signing up with Google")
-  }
+    e.preventDefault();
+    // Handle signup logic here
+    console.log('Signup attempt with:', formData);
+  };
 
   return (
     <div className="signup-container">
       <div className="signup-card">
-        <h1 className="app-name">Signup - LanguageHIIT</h1>
+        <div className="signup-header">
+          <h1 className="signup-title">Create Account</h1>
+          <p className="signup-subtitle">Join our language learning community</p>
+        </div>
 
-        <div className="signup-form-container">
-          <h2 className="signup-title">Create an account</h2>
-          <p className="signup-subtitle">Enter your email to sign up for this app</p>
-
-          <form onSubmit={handleSubmit} className="signup-form">
+        <form onSubmit={handleSubmit} className="signup-form">
+          <div className="input-group">
+            <div className="input-icon">
+              <User size={20} />
+            </div>
             <input
-              type="email"
-              className="email-input"
-              placeholder="email@domain.com"
-              value={email}
-              onChange={handleEmailChange}
+              type="text"
+              name="name"
+              placeholder="Full name"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
+          </div>
 
-            <button type="submit" className="email-signup-btn">
-              Sign up with email
+          <div className="input-group">
+            <div className="input-icon">
+              <Mail size={20} />
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <div className="input-icon">
+              <Lock size={20} />
+            </div>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
-          </form>
+          </div>
+
+          <div className="input-group">
+            <div className="input-icon">
+              <Lock size={20} />
+            </div>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="confirmPassword"
+              placeholder="Confirm password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="terms-agreement">
+            <label className="checkbox-container">
+              <input type="checkbox" required />
+              <span className="checkmark"></span>
+              <span className="terms-text">
+                I agree to the{' '}
+                <a href="/terms" className="terms-link">Terms of Service</a>
+                {' '}and{' '}
+                <a href="/privacy" className="terms-link">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" className="signup-button">
+            Create Account
+          </button>
 
           <div className="divider">
             <span>or continue with</span>
           </div>
 
-          <button className="google-signup-btn" onClick={handleGoogleSignup}>
+          <button type="button" className="google-button">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt="Google logo"
+              alt="Google"
               className="google-icon"
             />
-            Google
+            Sign up with Google
           </button>
+        </form>
 
-          <p className="terms-text">
-            By clicking continue, you agree to our{" "}
-            <a href="/terms" className="terms-link">
-              Terms of Service
-            </a>{" "}
-            and{" "}
-            <a href="/privacy" className="terms-link">
-              Privacy Policy
+        <div className="signup-footer">
+          <p>
+            Already have an account?{' '}
+            <a href="/login" className="login-link">
+              Sign in
             </a>
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
 

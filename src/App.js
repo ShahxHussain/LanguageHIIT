@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import './App.css';
 import Login from './pages/Login';
 import Team from './pages/Team';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/team" element={<Team />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

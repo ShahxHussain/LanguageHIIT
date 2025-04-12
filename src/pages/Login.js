@@ -1,87 +1,94 @@
 import React, { useState } from 'react';
 import '../styling/Login.css';
+import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle email login logic here
-    console.log('Logging in with:', email, password);
-  };
-
-  const handleGoogleLogin = () => {
-    // Handle Google login logic here
-    console.log('Logging in with Google');
+    // Handle login logic here
+    console.log('Login attempt with:', email, password);
   };
 
   return (
     <div className="login-container">
       <div className="login-card">
-        <h1 className="app-name">Login - LanguageHIIT</h1>
-        
-        <div className="login-form-container">
-          <h2 className="login-title">Log in to your account</h2>
-          <p className="login-subtitle">Enter your credentials to access your account</p>
-          
-          <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-header">
+          <h1 className="login-title">Welcome Back</h1>
+          <p className="login-subtitle">Sign in to continue your language journey</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="input-group">
+            <div className="input-icon">
+              <Mail size={20} />
+            </div>
             <input
               type="email"
-              className="email-input"
-              placeholder="email@domain.com"
+              placeholder="Email address"
               value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            
+          </div>
+
+          <div className="input-group">
+            <div className="input-icon">
+              <Lock size={20} />
+            </div>
             <input
-              type="password"
-              className="password-input"
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
-            
-            <div className="forgot-password-container">
-              <a href="/forgot-password" className="forgot-password-link">
-                Forgot password?
-              </a>
-            </div>
-            
-            <button type="submit" className="login-btn">
-              Log in with email
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
-          </form>
-          
+          </div>
+
+          <div className="form-options">
+            <label className="remember-me">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <a href="/forgot-password" className="forgot-password">
+              Forgot password?
+            </a>
+          </div>
+
+          <button type="submit" className="login-button">
+            Sign In
+          </button>
+
           <div className="divider">
             <span>or continue with</span>
           </div>
-          
-          <button 
-            className="google-login-btn"
-            onClick={handleGoogleLogin}
-          >
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" 
-              alt="Google logo" 
-              className="google-icon" 
+
+          <button type="button" className="google-button">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              alt="Google"
+              className="google-icon"
             />
-            Google
+            Sign in with Google
           </button>
-          
-          <p className="signup-redirect">
+        </form>
+
+        <div className="login-footer">
+          <p>
             Don't have an account?{' '}
-            <a href="/signup" className="signup-link">Sign up</a>
+            <a href="/signup" className="signup-link">
+              Sign up
+            </a>
           </p>
         </div>
       </div>
