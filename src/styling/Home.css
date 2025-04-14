@@ -3,6 +3,7 @@
 .home-container {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Hero Section */
@@ -255,6 +256,48 @@
   }
 }
 
+/* Floating Discord Button */
+.floating-discord-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #5865F2;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-discord-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
+  background: #4752c4;
+}
+
+.floating-discord-button span {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
@@ -275,6 +318,16 @@
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .floating-discord-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .floating-discord-button span {
+    font-size: 0.9rem;
   }
 }
 

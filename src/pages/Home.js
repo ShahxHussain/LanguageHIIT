@@ -1,6 +1,6 @@
 import React from 'react';
 import "../styling/Home.css";
-import { Users, Clock, CheckCircle, Star } from 'lucide-react';
+import { Users, Clock, CheckCircle, Star, MessageCircle } from 'lucide-react';
 
 function Home() {
   const testimonials = [
@@ -83,6 +83,7 @@ function Home() {
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <h2 className="section-title">What Our Users Say</h2>
+        <p className="section-subtitle">Join thousands of satisfied language learners</p>
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
             <div className="testimonial-card" key={index}>
@@ -118,6 +119,17 @@ function Home() {
           </button>
         </div>
       </section>
+
+      {/* Floating Discord Button */}
+      <a 
+        href="https://discord.gg/languagehiit" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="floating-discord-button"
+      >
+        <MessageCircle size={24} />
+        <span>Join Discord</span>
+      </a>
     </div>
   );
 }
