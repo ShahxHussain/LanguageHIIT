@@ -2,6 +2,22 @@ import React from 'react';
 import '../styling/Team.css';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
+import syed from '../assets/Syed.png';
+import roksana from '../assets/Roksana.jpg';
+import Ronnie from '../assets/Ronnie.jpg';
+import inaam from '../assets/Inaam.jpeg';
+
+
+// Create images object
+const teamImages = {
+
+  roksana: roksana,
+  ronnie: Ronnie,
+  syed: syed,
+  inaam: inaam,
+
+};
+
 function Team() {
   // Team members data
   const teamMembers = [
@@ -9,7 +25,7 @@ function Team() {
       id: 1,
       name: 'Roksana Khalid',
       role: 'Founder & CEO',
-      image: '/images/team/roksana.jpg',
+      image: teamImages.roksana,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'roksana@languagehiit.com'
@@ -18,7 +34,7 @@ function Team() {
       id: 2,
       name: 'Muhammad Inaamullah',
       role: 'Founder & CEO',
-      image: '/images/team/inaam.jpg',
+      image: teamImages.inaam,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'inaam@languagehiit.com'
@@ -27,16 +43,16 @@ function Team() {
       id: 3,
       name: 'Syed Shah Hussain Badshah',
       role: 'Founder & CEO',
-      image: '/images/team/syed.jpg',
+      image: teamImages.syed,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
-      email: 'syed@languagehiit.com'
+      email: 'shahhussain@languagehiit.com'
     },
     {
       id: 4,
-      name: 'Ronnie',
-      role: 'Founder & CEO',
-      image: '/images/team/ronnie.jpg',
+      name: 'Ronnie Osei',
+      role: 'Project Manager',
+      image: teamImages.ronnie,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'ronnie@languagehiit.com'
@@ -45,16 +61,16 @@ function Team() {
       id: 5,
       name: 'Yia',
       role: 'Founder & CEO',
-      image: '/images/team/yia.jpg',
+      image: teamImages.yia,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'yia@languagehiit.com'
     },
     {
       id: 6,
-      name: 'Unknown',
+      name: 'Claire Brainer',
       role: 'Founder & CEO',
-      image: '/images/team/unknown.jpg',
+      image: teamImages.unknown,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'unknown@languagehiit.com'
