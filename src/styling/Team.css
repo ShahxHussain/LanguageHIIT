@@ -119,7 +119,7 @@
   }
   
   .member-role {
-    color: #666;
+    color: #0071BC;
     font-size: 1rem;
   }
   
@@ -135,7 +135,7 @@
   }
   
   .social-link:hover {
-    color: #4CAF50;
+    color: #0071BC;
     transform: translateY(-3px);
   }
   

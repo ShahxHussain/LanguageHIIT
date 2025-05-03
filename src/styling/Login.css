@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #4CAF50, #45a049);
+    background: linear-gradient(135deg, #0071BC, #005a95);
     padding: 2rem;
   }
   
@@ -68,7 +68,7 @@
   
   .input-group:focus-within {
     background: #f0f0f0;
-    box-shadow: 0 0 0 2px #4CAF50;
+    box-shadow: 0 0 0 2px #0071BC;
   }
   
   .input-icon {
@@ -122,21 +122,21 @@
   }
   
   .remember-me input {
-    accent-color: #4CAF50;
+    accent-color: #0071BC;
   }
   
   .forgot-password {
-    color: #4CAF50;
+    color: #0071BC;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .forgot-password:hover {
-    color: #45a049;
+    color: #005a95;
   }
   
   .login-button {
-    background: #4CAF50;
+    background: #0071BC;
     color: white;
     border: none;
     padding: 1rem;
@@ -148,9 +148,9 @@
   }
   
   .login-button:hover {
-    background: #45a049;
+    background: #005a95;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 113, 188, 0.3);
   }
   
   .divider {
@@ -206,14 +206,14 @@
   }
   
   .signup-link {
-    color: #4CAF50;
+    color: #0071BC;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .signup-link:hover {
-    color: #45a049;
+    color: #005a95;
   }
   
   /* Animations */

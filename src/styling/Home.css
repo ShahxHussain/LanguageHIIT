@@ -59,7 +59,7 @@
 .hero-button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background: #4CAF50;
+  background: #0071BC;
   color: white;
   border: none;
   border-radius: 50px;
@@ -71,7 +71,7 @@
 .hero-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  background: #45a049;
+  background: #005a95;
 }
 
 /* Features Section */
@@ -111,7 +111,7 @@
 
 .feature-icon {
   margin-bottom: 1.5rem;
-  color: #4CAF50;
+  color: #0071BC;
 }
 
 .feature-title {
@@ -128,7 +128,7 @@
 /* Community Section */
 .community-section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #4CAF50, #45a049);
+  background: linear-gradient(135deg, #0071BC, #005a95);
   color: white;
   text-align: center;
 }
@@ -180,6 +180,13 @@
 .testimonials-section {
   padding: 5rem 2rem;
   background: #f8f9fa;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
 }
 
 .testimonials-grid {

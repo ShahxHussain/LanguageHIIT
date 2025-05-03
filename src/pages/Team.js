@@ -6,6 +6,8 @@ import syed from '../assets/Syed.png';
 import roksana from '../assets/Roksana.jpg';
 import Ronnie from '../assets/Ronnie.jpg';
 import inaam from '../assets/Inaam.jpeg';
+import yia from '../assets/yia.png'
+import claire from '../assets/claire.jpg'
 
 
 // Create images object
@@ -15,6 +17,8 @@ const teamImages = {
   ronnie: Ronnie,
   syed: syed,
   inaam: inaam,
+  yia: yia,
+  claire: claire,
 
 };
 
@@ -70,7 +74,7 @@ function Team() {
       id: 6,
       name: 'Claire Brainer',
       role: 'Founder & CEO',
-      image: teamImages.unknown,
+      image: teamImages.claire,g
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'unknown@languagehiit.com'
