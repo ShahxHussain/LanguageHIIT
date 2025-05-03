@@ -74,7 +74,7 @@ function Team() {
       id: 6,
       name: 'Claire Brainer',
       role: 'Founder & CEO',
-      image: teamImages.claire,g
+      image: teamImages.claire,
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
       email: 'unknown@languagehiit.com'
